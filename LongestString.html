@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		var string = prompt("Enter A String: ");
+		var flag = false;
+		var max=0,j=0;
+		for(var i=0;i<=string.length;i++)
+		{
+			if(string[i]==' ' || i==string.length)
+			{
+				if(flag==true)
+				{
+					if(j>max)
+					{
+						max=j;
+					}
+					j=0;
+					flag=false;
+				}
+
+			}
+			else
+			{
+				if(flag==false)
+				{
+					flag=true;
+				}
+				j++;
+			}
+
+		}
+		document.write(max);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.btn{
+			background-color: red;
+			border: none;
+			width: 120px;
+			padding: 15px;
+			float: left;
+			cursor: pointer;
+			border-radius: 5px;
+			color: white;
+			transition: background-color 0.5s;
+			outline: none;
+			margin: 5px;
+			box-shadow: 3px 3px 20px gray;
+		}
+		input[disabled]{
+			cursor: not-allowed;
+		}
+		.btn:hover{
+			background-color: #ffffe6;
+			color: red;
+			border: 1px solid red;
+			margin-top: 10px;
+		}
+		.btn:active{
+			box-shadow: 1px 1px 10px gray;
+		}
+	</style>
+	<script type="text/javascript">
+		var clas = [];
+
+		function addStudent()
+		{
+			var Student = {
+				name : prompt("Enter Student Name: "),
+				class : "11th",
+				RollNo : clas.length + 1,
+			}
+			if(Student.name!=null)
+			{
+				clas.push(Student);
+				alert("RollNo Allocated is: " + Student.RollNo);
+			}
+
+		}
+
+		function showData()
+		{
+			for(var i=0;i<clas.length;i++)
+			{
+				if(clas[i].name!=null)
+				{
+					alert(clas[i].name + "\n" + clas[i].class + "\n" + clas[i].RollNo);
+				}
+			}
+		}
+
+		function deleteStudent()
+		{
+			var roll = parseInt(prompt("Enter Any RollNo: "));
+			if(isNaN(roll) || roll>clas.length || clas[roll-1].name==null){
+				return;
+			}
+			clas[roll-1].name = clas[roll-1].RollNo = clas[roll-1].class = null;
+			alert("Student Entity Deleted");
+		}
+
+		function searchStudent()
+		{
+			var roll = parseInt(prompt("Enter Any RollNo: "));
+			if(isNaN(roll) || roll>clas.length || clas[roll-1].name==null){
+				return;
+			}
+			alert(clas[roll-1].name + "\n" + clas[roll-1].class + "\n" + clas[roll-1].RollNo);
+			
+		}
+
+
+	</script>
+</head>
+<body>
+
+<input type="button" onclick="addStudent()" class="btn" value="AddStudent">
+<input type="button" onclick="showData()" class="btn" value="ShowData">
+<input type="button" onclick="searchStudent()" class="btn" value="SearchStudent" disabled>
+<input type="button" onclick="deleteStudent()" class="btn" value="RemoveStudent">
+<p id="demo"></p>
+</body>
+</html>

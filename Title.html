@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		var string = prompt("Enter Any Value: ");
+		var flag=false;
+		var title="";
+		for(var i=0;i<string.length;i++)
+		{
+			if(string[i]==' ')
+			{
+				if(flag==true)
+				{
+					flag=false;
+				}
+				title += string[i];
+			}
+			else
+			{
+				if(flag==false)
+				{
+					title=title+string[i].toUpperCase();
+					flag=true;
+				}
+				else
+				{
+					title=title+string[i];
+				}
+			}
+		}
+		document.write(title);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

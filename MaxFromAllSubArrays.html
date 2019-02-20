@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		var array = [ [], [], [], [] ];
+		var maxx = [];
+		for(var i=0;i<array.length;i++)
+		{
+			var max=0;
+			for(var j=0;j<4;j++)
+			{
+				var x = parseInt(prompt("Enter Any Value: "));
+				array[i].push(x);
+				if(x>max)
+				{
+					max=x;
+				}
+			}
+			maxx.push(max);
+		}
+		for(var i=0;i<maxx.length;i++)
+		{
+			document.write(maxx[i] + " ");
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

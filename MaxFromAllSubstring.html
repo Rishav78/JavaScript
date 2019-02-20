@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		var string = prompt("Enter Your Name: ");
+		var max=0,j=0;
+		var flag=false;
+		var sub="",dup="";
+		for(var i=0;i<=string.length;i++)
+		{
+			if(string[i]==' ' || i==string.length)
+			{
+				if(flag==true)
+				{
+					if(max<j)
+					{
+						max=j;
+						sub=dup;
+					}
+					j=0;
+					dup="";
+					flag=false;
+				}
+			}
+			else
+			{
+				if(flag==false)
+				{
+					flag=true;
+				}
+				j++;
+				dup=dup+string[i];
+			}
+		}
+		document.write(sub);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
